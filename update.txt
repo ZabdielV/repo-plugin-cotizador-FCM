@@ -1,0 +1,45 @@
+Next RFQ Update:
+1	Compatiblity with WooCommerce quick view and flatsome quick feature ( done )
+2	"View Quote" functionality in the success message ( done )
+3	Warning: Invalid argument supplied for foreach() in /home/customer/www/ghislainp2.sg-host.com/public_html/wp-content/plugins/woocommerce-request-a-quote/includes/class-af-r-f-q-quote.php on line 988 (done)
+4	Bug: online 721 file name class-af-r-f-q-front.php. path incorrect ( done )
+5	Product image in the emails ( done )
+6	Customize title and colors of place quote and update quote button ( done )
+7	Compatibility with product bundles and composite products ( Skipped )
+8	Enable option in rule to display quote button for outstock products only ( done )
+9	Option to enable quote button for specific product variations (done )
+10	"Override templates in theme, i have done it by editing your plugins source files however your source files need fixing before I can update again. ( done )
+Your first error is on line 721 of woocommerce-request-a-quote/front/class-af-r-f-q-front.php. You are checking if the file exists in the wrong folder, it should be checking the front folder not emails.
+Then you have an error on line 5 of woocommerce-request-a-quote/front/templates/addify-quote-request-page.php. The filename you advise people to use is wrong.
+These are serious issue for people that need to override templates, we purchased this plugin for this ability. Please can these issues be fixed be asap?"
+11	Make hooks/actions part of extension sent by customer
+12	make add to quote button translatable ( done )
+13	FIX error on line number 988 includes/class-afrfq-quote.php ( done )
+14	On the single product page, Add To Quote button text is unable to translate to Chinese language, I'm using WPML and WPML team has help to resolve it and they suggest you guys to apply for their compatibility pogram to avoid these issues in the future. WPML instructed me to do the below steps to resolve the issue, please refer to the below. I'm afraid in future any update on Woocommerce Add to Quote plugin then this issue happened again, please help to do something about it.
+a) Visit *wp-content/plugins/woocommerce-request-a-quote/front/templates* folder
+b) Open the *simple.php* file for edit
+c) Scroll down to line 57 and add the following code after it
+$afrfq_custom_button_text = __( 'Add to Quote', 'addify_rfq' );
+d) Save the changes
+You may visit https://wpml.org/documentation/support/go-global-program/"
+15	Inherit Role based prices on quote page
+16	Inherit Role based B2B prices on quote page
+17  Inherit Whole sale tier prices on quote page
+
+
+Fixing of override templates: All templates can be override.
+
+yourtheme/woocommerce/addify/rfq/front/addify_quote_request_page.php.
+yourtheme/woocommerce/addify/rfq/front/quote-details-my-account.php
+yourtheme/woocommerce/addify/rfq/front/quote-fields.php
+yourtheme/woocommerce/addify/rfq/front/quote-list-table.php
+yourtheme/woocommerce/addify/rfq/front/quote-table.php
+yourtheme/woocommerce/addify/rfq/front/quote-totals-table.php
+
+Changed the template overriding. PHP function file_exists was replaced by wc_get_template();
+
+Note: It is compatible with previous version in case of any user override the template in previous versions.
+
+New user can override templates according to the path mentioned in file comments. 
+
+Templates can be found here. \wp-content\plugins\woocommerce-request-a-quote\templates
