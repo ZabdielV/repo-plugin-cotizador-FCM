@@ -7,6 +7,6 @@ No se cuenta con documentación, pero el archivo que se encarga de imprimir el t
 Se tiene que hacer que cuando el usuario escoja la cantidad de meses a arrendar y el tipo de arrendamiento se muestre cuanto debería pagar pon mensualidad.
 
 A lo mejor de forma dinámica que un formulario tenga un boton que diga
-"calular" y en su evento onSubmit calcule las mensualidades.
+"calcular" y en su evento onSubmit calcule las mensualidades.
 
 ![alt text](./img1.png)
