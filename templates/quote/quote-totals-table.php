@@ -28,47 +28,12 @@ $offered_total  = isset($quote_totals['_offered_total']) ? $quote_totals['_offer
 
 if ($price_display || $of_price_display) : ?>
 
-	<fieldset>
-		<legend>Por favor, selecciona la cantidad de meses a arrendar:</legend>
-		<div>
-			<input type="radio" id="huey" name="drone" value="huey" checked>
-			<label for="huey">12 meses</label>
-		</div>
 
-		<div>
-			<input type="radio" id="dewey" name="drone" value="dewey">
-			<label for="dewey">36 meses</label>
-		</div>
-
-		<div>
-			<input type="radio" id="louie" name="drone" value="louie">
-			<label for="louie">48 meses</label>
-		</div>
-	</fieldset>
-
-	<fieldset>
-		<legend>Por favor, selecciona la forma de arrendamiento:</legend>
-
-		<div>
-			<input type="radio" id="a" name="arrendamiento" value="a" checked>
-			<label for="a">Full Pay Out</label>
-		</div>
-
-		<div>
-			<input type="radio" id="b" name="arrendamiento" value="b">
-			<label for="b">Justo a valor de mercado</label>
-		</div>
-
-	</fieldset>
 
 	<table cellspacing="0" class="shop_table shop_table_responsive table_quote_totals">
 
-		<?php if ($price_display) : ?>
-			<tr class="order-total">
-				<th><?php esc_html_e('Precio estimado por mensualidad en Full Pay Out:', 'addify_rfq'); ?></th>
-				<td data-title="<?php esc_attr_e('Total', 'addify_rfq'); ?>"><?php echo wp_kses_post(wc_price($quote_total)); ?></td>
-			</tr>
-		<?php endif; ?>
+
+
 
 		<!-- <?php if ($price_display) : ?>
 			<tr class="cart-subtotal">
@@ -83,6 +48,8 @@ if ($price_display || $of_price_display) : ?>
 				<td data-title="<?php esc_attr_e('Offered Price Subtotal', 'addify_rfq'); ?>"><?php echo wp_kses_post(wc_price($offered_total)); ?></td>
 			</tr>
 		<?php endif; ?>
+
+
 
 		<?php
 		if (wc_tax_enabled() && $tax_display) :
@@ -101,6 +68,42 @@ if ($price_display || $of_price_display) : ?>
 				<td data-title="<?php echo esc_html__('Vat(standard)', 'addify_rfq'); ?>"><?php echo wp_kses_post(wc_price($vat_total)); ?></td>
 			</tr>
 		<?php endif; ?>
+
+
+
+
+		<td style="	 height: 120px; margin-bottom:50px; display:flex">
+			<table style="left:15%; width:70vw; position:absolute; border-spacing: 1;border-collapse: collapse;background: white;border-radius: 6px;overflow: hidden;">
+				<thead>
+					<tr style="background: #FFED86;font-size: 16px;height: 60px;">
+						<th style="padding-left: 8px;text-align: left;">Tipo de arrendamiento</th>
+						<th style="padding-left: 8px;text-align: left;">12 meses</th>
+						<th style="padding-left: 8px;text-align: left;">36 meses</th>
+						<th style="padding-left: 8px;text-align: left;">48 meses</th>
+						<th style="padding-left: 8px;text-align: left;">total a pagar</th>
+					</tr>
+					<thead>
+					<tbody>
+						<tr style="border-bottom: 1px solid #E3F1D5;height: 48px;">
+							<td style="padding-left: 8px;text-align: left;">Full Pay Out</td>
+							<td style="padding-left: 8px;text-align: left;"><?php echo "$" . round($quote_total / 12, 2) ?></td>
+							<td style="padding-left: 8px;text-align: left;"><?php echo "$" . round($quote_total / 36, 2) ?></td>
+							<td style="padding-left: 8px;text-align: left;"><?php echo "$" . round($quote_total / 48, 2) ?></td>
+							<td style="padding-left: 8px;text-align: left;"><?php echo "$" . $quote_total . " + intereses" ?></td>
+						</tr>
+						<tr style="border-bottom: 1px solid #E3F1D5;height: 48px;">
+							<td style="padding-left: 8px;text-align: left;">Justo a valor de mercado</td>
+							<td style="padding-left: 8px;text-align: left;"><?php echo "$" . round($quote_total / 12, 2) ?></td>
+							<td style="padding-left: 8px;text-align: left;"><?php echo "$" . round($quote_total / 36, 2) ?></td>
+							<td style="padding-left: 8px;text-align: left;"><?php echo "$" . round($quote_total / 48, 2) ?></td>
+							<td style="padding-left: 8px;text-align: left;"><?php echo "$" . $quote_total . " + intereses" ?></td>
+						</tr>
+					</tbody>
+			</table>
+		</td>
+
+
+
 
 		<?php if ($price_display) : ?>
 			<tr class="order-total">
