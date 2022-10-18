@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Mini-cart
  *
@@ -8,37 +9,37 @@
  *
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
-$quotes           = (array) WC()->session->get( 'quotes' );
-$pageurl          = get_page_link( get_option( 'addify_atq_page_id', true ) );
+$quotes           = (array) WC()->session->get('quotes');
+$pageurl          = get_page_link(get_option('addify_atq_page_id', true));
 $quote_item_count = 0;
 
-foreach ( $quotes as $qoute_item ) {
+foreach ($quotes as $qoute_item) {
 
-	$quote_item_count += isset( $qoute_item['quantity'] ) ? $qoute_item['quantity'] : 0;
+	$quote_item_count += isset($qoute_item['quantity']) ? $qoute_item['quantity'] : 0;
 }
 
-if ( 'icon' === get_option( 'afrfq_basket_option' ) ) : ?>
+if ('icon' === get_option('afrfq_basket_option')) : ?>
 	<li id="quote-li-icon" class="quote-li">
-		<a href="<?php echo esc_url( $pageurl ); ?>" title="<?php echo esc_html__( 'View Quote', 'addify_rfq' ); ?>">
+		<a href="<?php echo esc_url($pageurl); ?>" title="<?php echo esc_html__('View Quote', 'addify_rfq'); ?>">
 			<span class="dashicons dashicons-cart dashiconsc"></span>
-			<span id="total-items-count" class="totalitems"> <?php echo esc_attr( $quote_item_count ); ?> </span>
+			<span id="total-items-count" class="totalitems"> <?php echo esc_attr($quote_item_count); ?> </span>
 		</a>
 	</li>
 <?php endif; ?>
 
-<?php if ( 'dropdown' === get_option( 'afrfq_basket_option' ) ) : ?>
+<?php if ('dropdown' === get_option('afrfq_basket_option')) : ?>
 
 	<li id="quote-li" class="quote-li">
-		<a href="<?php echo esc_url( $pageurl ); ?>" title="<?php echo esc_html__( 'View Quote', 'addify_rfq' ); ?>">
+		<a href="<?php echo esc_url($pageurl); ?>" title="<?php echo esc_html__('View Quote', 'addify_rfq'); ?>">
 			<span class="dashicons dashicons-cart dashiconsc"></span>
 			<span id="total-items" class="totalitems">
-				<?php echo esc_attr( $quote_item_count ) . esc_html__( ' items in quote', 'addify_rfq' ); ?>
+				<?php echo esc_attr($quote_item_count) . esc_html__(' items in quote', 'addify_rfq'); ?>
 			</span>
 		</a>
 		<?php
-		wc_get_template( 
+		wc_get_template(
 			'quote/mini-quote-dropdown.php',
 			array(),
 			'/woocommerce/addify/rfq/',
@@ -46,4 +47,4 @@ if ( 'icon' === get_option( 'afrfq_basket_option' ) ) : ?>
 		);
 		?>
 	<li>
-<?php endif; ?>
+	<?php endif; ?>

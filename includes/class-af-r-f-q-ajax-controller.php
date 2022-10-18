@@ -617,12 +617,12 @@ class AF_R_F_Q_Ajax_Controller
 
 
 				/* translators: %s: Product name */
-				wc_add_notice(sprintf(__('“%s” has not been added to your quote.', 'addify_rfq'), $product_name), 'error');
+				wc_add_notice(sprintf(__('“%s” no se ha agregado a tu cotización.', 'addify_rfq'), $product_name), 'error');
 				echo 'success';
 			} else {
-				$button = '<a href="' . esc_url(get_page_link(get_option('addify_atq_page_id'))) . '" class="button wc-forward">' . __('View quote', 'addify_rfq') . '</a>';
+				$button = '<a href="' . esc_url(get_page_link(get_option('addify_atq_page_id'))) . '" class="button wc-forward">' . "ver lista cotización" . '</a>';
 				/* translators: %s: Product name */
-				wc_add_notice(sprintf(__('“%1$s” has been added to your quote. %2$s', 'addify_rfq'), $product_name, wp_kses_post($button)), 'success');
+				wc_add_notice(sprintf(__('“%1$s” se ha agregado a la lista de cotización. %2$s', 'addify_rfq'), $product_name, wp_kses_post($button)), 'success');
 				echo 'success';
 			}
 		}
@@ -727,12 +727,12 @@ class AF_R_F_Q_Ajax_Controller
 
 			if (false === $quote_item_key) {
 				/* translators: %s: Product name */
-				wc_add_notice(__('Quote is not available for selected variation.', 'addify_rfq'), 'error');
+				wc_add_notice(__('Cotización no esta disponible para la variación seleccionada.', 'addify_rfq'), 'error');
 				echo 'success';
 			} else {
-				$button = '<a href="' . esc_url(get_page_link(get_option('addify_atq_page_id'))) . '" class="button wc-forward">' . __('View quote', 'addify_rfq') . '</a>';
+				$button = '<a href="' . esc_url(get_page_link(get_option('addify_atq_page_id'))) . '" class="button wc-forward">' . "ver lista cotización" . '</a>';
 				/* translators: %s: Product name */
-				wc_add_notice(sprintf(__('“%1$s” has been added to your quote. %2$s', 'addify_rfq'), $product_name, wp_kses_post($button)), 'success');
+				wc_add_notice(sprintf(__('“%1$s” se ha agregado a la lista de cotización. %2$s', 'addify_rfq'), $product_name, wp_kses_post($button)), 'success');
 				echo 'success';
 			}
 		}
@@ -867,12 +867,12 @@ class AF_R_F_Q_Ajax_Controller
 
 			if (false === $quote_item_key) {
 				/* translators: %s: Product name */
-				wc_add_notice(sprintf(__('Quote is not available for “%s”.', 'addify_rfq'), $product_name), 'error');
+				wc_add_notice(sprintf(__('Cotización no disponible para “%s”.', 'addify_rfq'), $product_name), 'error');
 				echo 'success';
 			} else {
-				$button = '<a href="' . esc_url(get_page_link(get_option('addify_atq_page_id'))) . '" class="button wc-forward">' . __('View quote', 'addify_rfq') . '</a>';
+				$button = '<a href="' . esc_url(get_page_link(get_option('addify_atq_page_id'))) . '" class="button wc-forward">' . "ver lista cotización" . '</a>';
 				/* translators: %s: Product name */
-				wc_add_notice(sprintf(__('“%1$s” has been added to your quote. %2$s', 'addify_rfq'), $product_name, wp_kses_post($button)), 'success');
+				wc_add_notice(sprintf(__('“%1$s” se ha agregado a la lista de cotización. %2$s', 'addify_rfq'), $product_name, wp_kses_post($button)), 'success');
 				echo 'success';
 			}
 		}
