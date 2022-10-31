@@ -72,10 +72,10 @@ if ($price_display || $of_price_display) : ?>
 
 
 
-		<td style="	 height: 120px; margin-bottom:50px; display:flex">
+		<td style="	 height: 120px; margin-bottom:100px; display:flex">
 			<table style="left:15%; width:70vw; position:absolute; border-spacing: 1;border-collapse: collapse;background: white;border-radius: 6px;overflow: hidden;">
 				<thead>
-					<tr style="background: #FFED86;font-size: 16px;height: 60px;">
+					<tr style="background: rgba(221,51,51,0.6) ;font-size: 16px;height: 60px;">
 						<th style="padding-left: 8px;text-align: left;">Tipo de arrendamiento</th>
 						<th style="padding-left: 8px;text-align: left;">12 meses</th>
 						<th style="padding-left: 8px;text-align: left;">36 meses</th>
@@ -104,14 +104,14 @@ if ($price_display || $of_price_display) : ?>
 
 
 
-
+		<!-- 
 		<?php if ($price_display) : ?>
 			<tr class="order-total">
-				<th><?php esc_html_e('Total(standard)', 'addify_rfq'); ?></th>
-				<td data-title="<?php esc_attr_e('Total', 'addify_rfq'); ?>"><?php echo wp_kses_post(wc_price($quote_total)); ?></td>
+			 <th><?php esc_html_e('Total(standard)', 'addify_rfq'); ?></th> 
+				<td data-title="<?php esc_attr_e('Total', 'addify_rfq'); ?>">Total(standard)<?php echo wp_kses_post(wc_price($quote_total)); ?></td>
 			</tr>
 		<?php endif; ?>
-
+ -->
 	</table>
 
 <?php endif; ?>
