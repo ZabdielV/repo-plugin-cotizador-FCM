@@ -94,17 +94,13 @@ class AF_R_F_Q_Email_Controller {
 		$quote_status  = get_post_meta( $quote_id, 'quote_status', true );
 		$email_values  = (array) get_option( 'afrfq_emails' );
 
-		$email_enable  = isset( $email_values[ $quote_status ]['enable'] ) ? $email_values[ $quote_status ]['enable'] : '';
-		$email_subject = isset( $email_values[ $quote_status ]['subject'] ) ? $email_values[ $quote_status ]['subject'] : '';
-		$email_heading = isset( $email_values[ $quote_status ]['heading'] ) ? $email_values[ $quote_status ]['heading'] : '';
-		$email_message = isset( $email_values[ $quote_status ]['message'] ) ? $email_values[ $quote_status ]['message'] : '';
+		$email_enable  = isset( $email_values['af_admin']['enable'] ) ? $email_values['af_admin']['enable'] : '';
+		$email_subject = isset( $email_values['af_admin']['subject'] ) ? $email_values['af_admin']['subject'] : '';
+		$email_heading = isset( $email_values['af_admin']['heading'] ) ? $email_values['af_admin']['heading'] : '';
+		$email_message = isset( $email_values['af_admin']['message'] ) ? $email_values['af_admin']['message'] : '';
 
 		
 		if ( ! is_email( $user_email ) ) {
-			return;
-		}
-
-		if ( 'yes' !== $email_enable ) {
 			return;
 		}
 
@@ -119,7 +115,7 @@ class AF_R_F_Q_Email_Controller {
 		ob_start();
 
 		wc_get_template(
-			'emails/quote-email-to-customer.php',
+			'emails/quote-email-to-admin.php',
 			array(
 				'email_heading' => $email_heading,
 				'user_name'     => $user_name,
